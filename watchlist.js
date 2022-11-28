@@ -67,7 +67,7 @@ document.addEventListener('click',async(e) =>  {
        const movieIndex = await myWatchListArray.indexOf(e.target.id)
        myWatchListArray.splice(movieIndex,1)
        localStorage.setItem('watchlist',JSON.stringify(myWatchListArray))
-       getMovieWatchList()
+       location.reload(true)
     }
 })
 getMovieWatchList()
