@@ -42,7 +42,13 @@ function handleTheme(){
 }
 
 
-searchButton.addEventListener('click',handleSearchRequest)
+searchButton.addEventListener('click',() => {
+    if(searchInput.value.length){
+        handleSearchRequest()
+    }else{
+        document.querySelector('.explore').innerHTML = `Please enter a movie name `;
+    }
+})
 function handleSearchRequest(){
     getMovieSearch().then(() => renderMovie());
 }
